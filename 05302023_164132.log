@@ -1,0 +1,40 @@
+[ 2023-05-30 16:41:35,518 ] 15 root- INFO- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-05-30 16:41:35,518 ] 23 root- INFO- Exporting data as dataframe
+[ 2023-05-30 16:41:35,518 ] 11 root- INFO- Reading data from database defaulter and collection creditcard
+[ 2023-05-30 16:41:43,598 ] 13 root- INFO- Found columns {df.columns}
+[ 2023-05-30 16:41:43,599 ] 15 root- INFO- Removing ID column
+[ 2023-05-30 16:41:43,620 ] 17 root- INFO- Rows and columns in (180000, 25)
+[ 2023-05-30 16:41:43,713 ] 25 root- INFO- DataFrame                              _id  LIMIT_BAL  SEX  EDUCATION  MARRIAGE  ...  PAY_AMT3  PAY_AMT4  PAY_AMT5  PAY_AMT6  default.payment.next.month
+0       64359c6ca7f4331675a7bfeb    20000.0  1.0        1.0       2.0  ...     704.0     928.0     912.0    1069.0                         0.0
+1       64359c6ca7f4331675a7bfbb   120000.0  2.0        2.0       2.0  ...    1000.0    1000.0       0.0    2000.0                         1.0
+2       64359c6ca7f4331675a7bfba    20000.0  2.0        2.0       1.0  ...       0.0       0.0       0.0       0.0                         1.0
+3       64359c6ca7f4331675a7bfec    70000.0  1.0        3.0       2.0  ...    2000.0       0.0    1500.0    1500.0                         1.0
+4       64359c6ca7f4331675a7bff0   150000.0  2.0        1.0       2.0  ...    1049.0    1500.0    2000.0    5000.0                         0.0
+...                          ...        ...  ...        ...       ...  ...       ...       ...       ...       ...                         ...
+179995  6474a40b5756b67332e7aabd   220000.0  1.0        3.0       1.0  ...    5003.0    3047.0    5000.0    1000.0                         0.0
+179996  6474a40b5756b67332e7aabe   150000.0  1.0        3.0       2.0  ...    8998.0     129.0       0.0       0.0                         0.0
+179997  6474a40b5756b67332e7aabf    30000.0  1.0        2.0       2.0  ...   22000.0    4200.0    2000.0    3100.0                         1.0
+179998  6474a40b5756b67332e7aac0    80000.0  1.0        3.0       1.0  ...    1178.0    1926.0   52964.0    1804.0                         1.0
+179999  6474a40b5756b67332e7aac1    50000.0  1.0        2.0       1.0  ...    1430.0    1000.0    1000.0    1000.0                         1.0
+
+[180000 rows x 25 columns]
+[ 2023-05-30 16:41:43,713 ] 27 root- INFO- Creating feature store dir
+[ 2023-05-30 16:41:43,714 ] 31 root- INFO- Saving data in feature store
+[ 2023-05-30 16:41:49,676 ] 35 root- INFO- Split data into train and test 
+[ 2023-05-30 16:41:49,809 ] 38 root- INFO- Create dataset dir
+[ 2023-05-30 16:41:49,809 ] 42 root- INFO- Save train and test data
+[ 2023-05-30 16:41:55,782 ] 49 root- INFO- Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/05302023__164135/data_ingestion/feature_store/UCI_Credit_Card.csv', train_file_path='/config/workspace/artifact/05302023__164135/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/05302023__164135/data_ingestion/dataset/test.csv')
+[ 2023-05-30 16:41:55,918 ] 15 root- INFO- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-05-30 16:41:55,918 ] 85 root- INFO- Reading base dataframe
+[ 2023-05-30 16:41:56,017 ] 87 root- INFO- Replace null values with nan
+[ 2023-05-30 16:41:56,026 ] 90 root- INFO- Drop features with higher missing values
+[ 2023-05-30 16:41:56,029 ] 27 root- INFO- selecting column name which contains null above to 0.3
+[ 2023-05-30 16:41:56,030 ] 30 root- INFO- Columns to drop: []
+[ 2023-05-30 16:41:56,032 ] 93 root- INFO- Reading train dataset
+[ 2023-05-30 16:41:56,772 ] 97 root- INFO- Drop features with higher missing values in training dataset
+[ 2023-05-30 16:41:56,789 ] 27 root- INFO- selecting column name which contains null above to 0.3
+[ 2023-05-30 16:41:56,789 ] 30 root- INFO- Columns to drop: []
+[ 2023-05-30 16:41:56,810 ] 27 root- INFO- selecting column name which contains null above to 0.3
+[ 2023-05-30 16:41:56,811 ] 30 root- INFO- Columns to drop: []
+[ 2023-05-30 16:41:56,816 ] 101 root- INFO- check if all req columns exist in dataset
+[ 2023-05-30 16:41:56,816 ] 113 root- INFO- Write reprt in yaml file
